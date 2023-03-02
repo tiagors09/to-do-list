@@ -1,22 +1,27 @@
+import { useState } from 'react'
 import './style.css'
 
 function Task({ name, info, status }) {
-  const statusColors = {
-    do: 'white',
-    doing: 'yellow',
-    done: 'green',
-    fail: 'red',
-  }
+  const [index, setIndex] = useState(0)
+
+  const statusColors = ['white', 'yellow', 'green', 'red']
 
   return (
     <article
       className="task"
       style={{
-        backgroundColor: statusColors[status],
+        backgroundColor: statusColors[index],
+      }}
+      onClick={() => {
+        setIndex((index) => (index + 1) % statusColors.length)
       }}
     >
-      <section className="task-name">{name}</section>
-      <section className="task-info">{info}</section>
+      <section className="name">
+        <h1>{name}</h1>
+      </section>
+      <section className="info">
+        <p>{info}</p>
+      </section>
     </article>
   )
 }
