@@ -1,13 +1,18 @@
-import md5 from 'md5'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './style.css'
 
-function TaskForm() {
+const initState = {
+  name: null,
+  info: null,
+  status: 'do',
+}
+
+function TaskForm({ handlerAddTask }) {
   const [fields, setFields] = useState({})
 
   function handleSubmit(event) {
     event.preventDefault()
-    localStorage.setItem(localStorage.length + 1, JSON.stringify(fields))
+    handlerAddTask(fields)
   }
 
   function handleChange(event) {
@@ -18,27 +23,27 @@ function TaskForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="task-form">
-      <label className="label" htmlFor="task-name">
+    <form onSubmit={handleSubmit} className="form">
+      <label className="label" htmlFor="name">
         Name
       </label>
       <input
         className="input"
         type="text"
-        name="task-name"
-        id="task-name"
+        name="name"
+        id="name"
         placeholder="Do homework or whatever..."
         onChange={handleChange}
         required
       />
-      <label className="label" htmlFor="task-info">
+      <label className="label" htmlFor="info">
         Info
       </label>
       <input
         className="input"
         type="text"
-        name="task-info"
-        id="task-info"
+        name="info"
+        id="info"
         placeholder="Until 8:00pm without see answers in Answers section in book"
         onChange={handleChange}
         required
