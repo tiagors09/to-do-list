@@ -3,8 +3,11 @@
 Task manager that allows the control of states by color.
 
 White - to do
+
 Green - doing
-yellow - done
+
+Yellow - done
+
 Red - fail
 
 ## Installation
