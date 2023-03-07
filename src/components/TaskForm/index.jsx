@@ -23,32 +23,46 @@ function TaskForm({ handlerAddTask }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <label className="label" htmlFor="name">
-        Name
-      </label>
-      <input
-        className="input"
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Do homework or whatever..."
-        onChange={handleChange}
-        required
-      />
-      <label className="label" htmlFor="info">
-        Info
-      </label>
-      <input
-        className="input"
-        type="text"
-        name="info"
-        id="info"
-        placeholder="Until 8:00pm without see answers in Answers section in book"
-        onChange={handleChange}
-        required
-      />
-      <input className="submit-button" type="submit" value="add task" />
+    <form className="container" onSubmit={handleSubmit}>
+      <div className="field">
+        <label className="label" htmlFor="name">
+          Name
+        </label>
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Do homework or whatever..."
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <label className="label" htmlFor="info">
+          Info
+        </label>
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            name="info"
+            id="info"
+            placeholder="Until 8:00pm without see answers in Answers section in book"
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
+
+      <div className="field">
+        <div className="control">
+          <input className="button is-link" type="submit" value="add task" />
+        </div>
+      </div>
     </form>
   )
 }

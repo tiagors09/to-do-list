@@ -13,19 +13,21 @@ function App() {
   }
 
   return (
-    <main className="App">
-      <header>
-        <h1 className="title">to do list</h1>
-      </header>
+    <main className="section">
+      <div className="container">
+        <header>
+          <h1 className="title is-1">to do list</h1>
+        </header>
+      </div>
       <TaskForm handlerAddTask={addTask} />
-      <article className="tasks">
-        <h2>tasks</h2>
-        <section className="list">
+      <div className="container">
+        <h2 className="title is-2">tasks</h2>
+        <div className="container">
           {tasks.map((task) => {
             return <Task name={task['name']} info={task['info']} />
           })}
-        </section>
-      </article>
+        </div>
+      </div>
     </main>
   )
 }

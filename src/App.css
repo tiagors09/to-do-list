@@ -1,6 +1,1 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@import 'bulma/css/bulma.css';
